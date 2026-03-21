@@ -1,0 +1,21 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = "."
+addopts = "-v -p no:warnings"
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+select = ["E4", "E7", "E9", "F"]
+ignore = ["E501", "F401", "E402"]
+
+[tool.ruff.mccabe]
+max-complexity = 20
+
+[tool.mypy]
+python_version = "3.11"
+disallow_untyped_defs = false
+ignore_missing_imports = true
+disable_error_code = ["arg-type", "assignment", "import-not-found"]
+explicit_package_bases = true
